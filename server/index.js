@@ -8,8 +8,6 @@ const { createOrder, captureOrder } = require('./paypal');
 const app = express();
 app.use(express.json());
 app.use(cors({ origin: process.env.ORIGIN || '*' }));
-// Serwuj pliki statyczne z katalogu rodzica (tomyunici.pl.html, sklep.html itp.)
-app.use(express.static(path.join(__dirname, '..')));
 
 const SPREADSHEET_ID = process.env.SPREADSHEET_ID;
 if (!SPREADSHEET_ID) console.warn('Warning: SPREADSHEET_ID not set. Signups/orders will fail until configured.');
