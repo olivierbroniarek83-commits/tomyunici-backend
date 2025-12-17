@@ -1,0 +1,284 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sklep — TomyUnici</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Montserrat', Arial, sans-serif;
+      background: #ffffff;
+      min-height: 100vh;
+      margin: 0;
+      padding: 0;
+      color: #000000;
+    }
+    
+    .container {
+      max-width: 100%;
+      margin: 0 auto;
+      background: white;
+    }
+    
+    header {
+      background: #000000;
+      color: white;
+      padding: 20px 40px;
+      text-align: center;
+      border-bottom: 3px solid #e74c3c;
+    }
+    
+    header h1 {
+      font-size: 2.5em;
+      font-weight: 700;
+      margin-bottom: 15px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+    
+    nav {
+      margin-top: 15px;
+    }
+    
+    nav a {
+      color: white;
+      text-decoration: none;
+      padding: 10px 25px;
+      background: rgba(255,255,255,0.2);
+      border-radius: 25px;
+      transition: all 0.3s ease;
+      display: inline-block;
+      font-weight: 600;
+      margin: 0 5px;
+    }
+    
+    nav a:hover {
+      background: rgba(255,255,255,0.3);
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    }
+    
+    .content {
+      padding: 40px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    h2 {
+      color: #000000;
+      font-size: 2em;
+      margin-bottom: 30px;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+    
+    h3 {
+      color: #2a5298;
+      font-size: 1.5em;
+      margin: 30px 0 20px;
+      font-weight: 600;
+    }
+    
+    #products {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 25px;
+      margin-bottom: 40px;
+    }
+    
+    .product {
+      background: #ffffff;
+      padding: 25px;
+      border-radius: 4px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      transition: all 0.3s ease;
+      border: 1px solid #eeeeee;
+    }
+    
+    .product:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+      border-color: #e74c3c;
+    }
+    
+    .product strong {
+      display: block;
+      font-size: 1.3em;
+      color: #000000;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+    }
+    
+    .product div {
+      font-size: 1.5em;
+      color: #e74c3c;
+      font-weight: 700;
+      margin: 15px 0;
+    }
+    
+    button {
+      width: 100%;
+      padding: 12px;
+      background: #000000;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      font-size: 1em;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    
+    button:hover {
+      background: #e74c3c;
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    }
+    
+    button:active {
+      transform: translateY(0);
+    }
+    
+    .cart-section {
+      background: #f9f9f9;
+      padding: 30px;
+      border-radius: 4px;
+      margin-bottom: 30px;
+      border: 1px solid #eeeeee;
+    }
+    
+    #cart-items {
+      list-style: none;
+      padding: 0;
+      margin-bottom: 20px;
+    }
+    
+    #cart-items li {
+      background: white;
+      padding: 12px 20px;
+      margin-bottom: 10px;
+      border-radius: 4px;
+      border-left: 4px solid #e74c3c;
+      font-weight: 600;
+    }
+    
+    .cart-total {
+      font-size: 1.5em;
+      color: #1e3c72;
+      font-weight: 700;
+      margin: 20px 0;
+      text-align: right;
+    }
+    
+    .checkout-form {
+      max-width: 500px;
+      margin-top: 20px;
+    }
+    
+    input {
+      width: 100%;
+      padding: 12px 15px;
+      margin-bottom: 15px;
+      border: 2px solid #ddd;
+      border-radius: 8px;
+      font-size: 1em;
+      transition: all 0.3s ease;
+      font-family: 'Montserrat', Arial, sans-serif;
+    }
+    
+    input:focus {
+      outline: none;
+      border-color: #667eea;
+      box-shadow: 0 0 0 3px rgba(102,126,234,0.1);
+    }
+    
+    .checkout-btn {
+      background: #000000;
+      font-size: 1.1em;
+      padding: 15px;
+    }
+    
+    .checkout-btn:hover {
+      background: #e74c3c;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    }
+    
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 1.8em;
+      }
+      
+      .content {
+        padding: 25px;
+      }
+      
+      h2 {
+        font-size: 1.5em;
+      }
+      
+      #products {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>🛒 Sklep TomyUnici</h1>
+      <nav>
+        <a href="tomyunici.pl.html">🏠 Strona główna</a>
+      </nav>
+    </header>
+
+    <div class="content">
+      <h2>Nasze produkty</h2>
+      <div id="products">
+        <!-- products inserted here -->
+      </div>
+
+      <div class="cart-section">
+        <h3>🛍️ Twój koszyk</h3>
+        <ul id="cart-items"></ul>
+        <div class="cart-total">
+          Razem: <span id="cart-total">0.00</span> PLN
+        </div>
+
+        <div class="checkout-form">
+          <h3>Dane do zamówienia</h3>
+          <input id="cust-name" placeholder="Imię i nazwisko">
+          <input id="cust-email" placeholder="E-mail" type="email">
+          <button class="checkout-btn" onclick="checkout()">💳 Przejdź do płatności (PayPal)</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="/public/js/shop.js"></script>
+  <script>
+    const PRODUCTS = [
+      { id: 'shirt1', name: 'Koszulka TomyUnici', price: 79.00 },
+      { id: 'cup1', name: 'Kubek TomyUnici', price: 29.00 },
+      { id: 'scarf1', name: 'Szalik TomyUnici', price: 49.00 },
+      { id: 'cap1', name: 'Czapka TomyUnici', price: 39.00 }
+    ];
+    const el = document.getElementById('products');
+    el.innerHTML = PRODUCTS.map(p => `
+      <div class="product">
+        <strong>${p.name}</strong>
+        <div>${p.price.toFixed(2)} PLN</div>
+        <button onclick='addToCart(${JSON.stringify(p)})'>Dodaj do koszyka</button>
+      </div>
+    `).join('');
+  </script>
+</body>
+</html>

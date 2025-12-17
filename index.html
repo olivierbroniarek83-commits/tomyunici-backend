@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Wkrótce otwarte — TO MY UNICI</title>
+  <meta name="description" content="Oficjalna strona kibiców Unii Skierniewice. Strona oficjalnie wystartuje wkrótce — zapisz się, aby otrzymać powiadomienie.">
+  <style>
+    :root{ --bg:#f4f4f3; --card:#ffffff; --muted:#6b7280; --accent:#000000; --accent-2:#1e90ff; --text:#0b1220; --glass:rgba(0,0,0,0.04); --danger:#b91c1c; }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    /* Background image: place your PNG (e.g. jpg/background.png) in the 'jpg' folder next to this HTML file or update the path below */
+    body{margin:0;font-family:Georgia, 'Times New Roman', serif;background-color:#f6f7f9;background-image:url('jpg/background.png');background-size:cover;background-position:center;background-repeat:no-repeat;background-attachment:fixed;color:var(--text);display:flex;align-items:center;justify-content:center;padding:2rem}
+    .card{width:100%;max-width:720px;background:rgba(255,255,255,0.92);border-radius:6px;padding:1.25rem;box-shadow:0 8px 20px rgba(10,10,10,0.04);border:1px solid rgba(0,0,0,0.06);display:block;transition:box-shadow .18s ease,transform .18s ease}
+    .card:hover{box-shadow:0 12px 30px rgba(10,10,10,0.06);transform:translateY(-2px)}
+    .brand{display:flex;align-items:center;gap:.6rem}
+    .logo-img{width:44px;height:44px;border-radius:6px;object-fit:contain;display:inline-block}
+    h1{margin:0;font-size:clamp(1.4rem,4vw,2.2rem)}
+    p.lead{color:var(--muted);margin:.5rem 0 0}
+
+    .countdown{display:flex;gap:.8rem;margin-top:1rem}
+    .countdown .seg{background:transparent;padding:.6rem .8rem;border-radius:6px;text-align:center;min-width:64px;border:1px solid #eef0f3}
+    .seg .num{font-weight:700;font-size:1.1rem}
+    .seg .label{font-size:.75rem;color:var(--muted);margin-top:.25rem}
+
+    .note{font-size:.85rem;color:var(--muted);margin-top:.6rem}
+    .social{margin-top:.6rem}
+    .social a{display:inline-flex;align-items:center;gap:.5rem;color:var(--accent);font-weight:600;text-decoration:underline;text-decoration-thickness:1.2px}
+    .social a:hover{text-decoration:underline;opacity:0.9}
+    .social .social-icon{width:18px;height:18px;display:inline-block;fill:currentColor}
+    .hidden{display:none}
+    .center{display:flex;align-items:center;justify-content:center} 
+
+    @media (max-width:600px){ .countdown{flex-wrap:wrap;gap:.5rem} .countdown .seg{min-width:56px} }
+  </style> 
+</head>
+<body>
+  <main class="card" role="main" aria-labelledby="title">
+    <section>
+      <div class="brand">
+        <img src="jpg/logo.jpg" alt="TO MY UNICI — logo" class="logo-img">
+        <div>
+          <h1 id="title">Wkrótce ruszy!!!</h1>
+          <p class="lead">Oficjalna strona kibiców Unii Skierniewice będzie dostępna już wkrótce.</p>
+        </div>
+      </div>
+
+      <div class="countdown" aria-live="polite" aria-atomic="true" id="countdown">
+        <div class="seg"><div class="num" id="days">—</div><div class="label">dni</div></div>
+        <div class="seg"><div class="num" id="hours">—</div><div class="label">godz.</div></div>
+        <div class="seg"><div class="num" id="minutes">—</div><div class="label">min</div></div>
+        <div class="seg"><div class="num" id="seconds">—</div><div class="label">sek</div></div>
+      </div>
+
+    <aside class="side" aria-label="Informacje">
+      <div style="padding:.5rem 0">
+        <h2 style="margin:0 0 .6rem 0">Bądź z nami</h2>
+        <p class="muted">Strona oficjalnie wystartuje 1 stycznia 2026. Śledź nasze profile społecznościowe, aby nie przegapić premiery.</p>
+        <p class="social">
+          <a href="https://www.facebook.com/profile.php?id=61558707391719&sk=reviews&locale=pl_PL" target="_blank" rel="noopener noreferrer" aria-label="TO MY UNICI na Facebooku (otworzy w nowej karcie)">
+            <svg class="social-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M22 12.07C22 6.48 17.52 2 12 2S2 6.48 2 12.07C2 17.1 5.66 21.24 10.44 22v-7.02H7.9v-2.9h2.54V9.88c0-2.5 1.49-3.88 3.77-3.88 1.09 0 2.23.2 2.23.2v2.45h-1.25c-1.23 0-1.61.77-1.61 1.56v1.87h2.74l-.44 2.9h-2.3V22C18.34 21.24 22 17.1 22 12.07z"/></svg>
+            Facebook
+          </a>
+          <span style="margin:0 .5rem;color:var(--muted)">•</span>
+          <a href="https://www.instagram.com/to_my_unici" target="_blank" rel="noopener noreferrer" aria-label="TO MY UNICI na Instagramie (otworzy w nowej karcie)">
+            <svg class="social-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm5 6.5A4 4 0 1 0 16 12a4 4 0 0 0-4-3.5zm4.5-.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"/></svg>
+            Instagram
+          </a>
+        </p>
+      </div>
+
+    </aside>
+  </main> 
+
+  <script>
+    // Target date: 2026-01-01 00:00:00 local time (constructed as local date)
+    const target = new Date(2026, 0, 1, 0, 0, 0);
+
+    function pad(n){return String(n).padStart(2,'0')}
+
+    function updateCountdown(){
+      const now = new Date();
+      const diff = target - now;
+      if(diff <= 0){
+        document.getElementById('days').textContent = '0';
+        document.getElementById('hours').textContent = '00';
+        document.getElementById('minutes').textContent = '00';
+        document.getElementById('seconds').textContent = '00';
+        document.getElementById('countdown').insertAdjacentHTML('afterend','<p class="lead" style="margin-top:1rem">Strona jest już dostępna! <a href="/" style="color:var(--accent);font-weight:700">Przejdź do strony</a></p>');
+        clearInterval(interval);
+        return;
+      }
+      const days = Math.floor(diff / (1000*60*60*24));
+      const hours = Math.floor((diff / (1000*60*60)) % 24);
+      const minutes = Math.floor((diff / (1000*60)) % 60);
+      const seconds = Math.floor((diff / 1000) % 60);
+
+      document.getElementById('days').textContent = days;
+      document.getElementById('hours').textContent = pad(hours);
+      document.getElementById('minutes').textContent = pad(minutes);
+      document.getElementById('seconds').textContent = pad(seconds);
+    }
+
+    const interval = setInterval(updateCountdown, 1000);
+    updateCountdown();
+
+    // No signup form on this simplified page (email capture removed as requested).
+
+    // Accessibility: announce initial countdown
+    document.getElementById('countdown').setAttribute('role','status');
+  </script>
+</body>
+</html>
